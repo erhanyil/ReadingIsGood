@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "e10dbeb5-982b-4106-a56d-0ea420b78662",
+		"name": "ReadingIsGood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Save Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"erhan_yil@windowslive.com\",\r\n    \"firstName\": \"Erhan\",\r\n    \"lastName\": \"Yıldırım\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Credential",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwiZXhwIjozMjAwOTg3MDEwLCJpYXQiOjE2NTI3NDQ0MjF9.glx2i0xdL7nYyOidBcbZSyQqdlGjl3ndaJ9rl4ebNiiBXSqP8-m1yNtDmD1_YCIQ3Y9IOoneiw2bbqUIjftfmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/credential",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"credential"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"erhan_yil@windowslive.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/create-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"create-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "New Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwiZXhwIjozMjAwOTg3MDEwLCJpYXQiOjE2NTI3NDQ0MjF9.glx2i0xdL7nYyOidBcbZSyQqdlGjl3ndaJ9rl4ebNiiBXSqP8-m1yNtDmD1_YCIQ3Y9IOoneiw2bbqUIjftfmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"The Lord of the Rings\",\r\n    \"author\": \"J. R. R. Tolkien\",\r\n    \"price\": 20.99,\r\n    \"stock\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwiZXhwIjozMjAwOTg3MDEwLCJpYXQiOjE2NTI3NDQ0MjF9.glx2i0xdL7nYyOidBcbZSyQqdlGjl3ndaJ9rl4ebNiiBXSqP8-m1yNtDmD1_YCIQ3Y9IOoneiw2bbqUIjftfmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwiZXhwIjozMjAwOTg3MDEwLCJpYXQiOjE2NTI3NDQ0MjF9.glx2i0xdL7nYyOidBcbZSyQqdlGjl3ndaJ9rl4ebNiiBXSqP8-m1yNtDmD1_YCIQ3Y9IOoneiw2bbqUIjftfmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stock By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwiZXhwIjozMjAwOTg3MDEwLCJpYXQiOjE2NTI3NDQ0MjF9.glx2i0xdL7nYyOidBcbZSyQqdlGjl3ndaJ9rl4ebNiiBXSqP8-m1yNtDmD1_YCIQ3Y9IOoneiw2bbqUIjftfmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"stock\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book/1/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"1",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
